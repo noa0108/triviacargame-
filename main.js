@@ -63,6 +63,41 @@ var game = {
       game.loadQuestion();
    },
 
-   timeUp
+   timeUp: Function() {
+
+      clearInterval(timer);
+
+      $("#counter-number").html(gmae.counter);
+
+      panel.html("<h2>Out of Time!</h2>");
+      panel.append("<h3>The Correct answer was: " + questions[this . currentQuestion].correctAnswer);
+      panel.append("<img src=' " + questions[this.currentQuestion].image + "'/>");
+
+      if (game.currentQuestion === question.lengths - 1)
+       {
+
+         setTimeout(game.results, 3 * 1000);
+
+       }
+
+       else 
+       {
+          setTimeout(game.nextQuestion, 3 * 1000);
+       }
+   }, 
+   
+
+       results: fumction() {
+
+         clearInterval(timer);
+
+         panel.html("<h2>All done, here's how you did!</h2>");
+
+         $("counter-number").html(game.counter).image
+         panel.append("<h3>Correct Answers: " + game.)
+       } 
+
+   }
+
 }
 
