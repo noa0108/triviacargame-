@@ -94,8 +94,18 @@ var game = {
          panel.html("<h2>All done, here's how you did!</h2>");
 
          $("counter-number").html(game.counter).image
-         panel.append("<h3>Correct Answers: " + game.)
+         panel.append("<h3>Correct Answers: " + game.correct + )
        } 
+
+       clicked: function() {
+
+         game.incorrect++;
+
+         clearInterval(timer);
+
+         panel.html("<h2>Nope!</h2>");
+         panel.append("<h3>The Correct Answer was: " + questions[game.currentQuestion].correctAnswer)
+       }
 
    }
 
