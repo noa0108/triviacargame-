@@ -36,7 +36,7 @@ var game = {
 
 
    countdown: function() {
-      game.counter--
+      game.counter--;
       $("#counter-number").html(game.counter);
       if (game-counter === 0) {
          console.log("TIME UP");
@@ -70,10 +70,10 @@ var game = {
       $("#counter-number").html(gmae.counter);
 
       panel.html("<h2>Out of Time!</h2>");
-      panel.append("<h3>The Correct answer was: " + questions[this . currentQuestion].correctAnswer);
+      panel.append("<h3>The Correct answer was: " + questions[this.currentQuestion].correctAnswer);
       panel.append("<img src=' " + questions[this.currentQuestion].image + "'/>");
 
-      if (game.currentQuestion === question.lengths - 1)
+      if (game.currentQuestion === questions.length - 1)
        {
 
          setTimeout(game.results, 3 * 1000);
@@ -87,27 +87,81 @@ var game = {
    }, 
    
 
-       results: fumction() {
+       results: fuction() {
 
          clearInterval(timer);
 
          panel.html("<h2>All done, here's how you did!</h2>");
 
-         $("counter-number").html(game.counter).image
-         panel.append("<h3>Correct Answers: " + game.correct + )
-       } 
+         $("counter-number").html(game.counter);
 
-       clicked: function() {
+         panel.append("<h3>Correct Answers: " + game.correct + "</h3>" );
+         panel.append("<h3>Incorrect Answers: " + game.incorrect + "</h3>");
+         panel.append("<h3>Unanswered: " + (questions.length - (game.correct + game.incorrect)) + "</h3>");
+         panel.append("<br><button id='start-over'>Start-over'Start Over? </button>"); 
+
+      }, 
+
+       clicked: function(e) { 
+
+         clearInterval(timer);
+          if ($(e.target).attr("data-name")=== questions[this.currentQuestion].correctAnswer)
+          {
+             this.answeredCorrectly();
+          }
+          else
+          {
+             this.answeredincorrectly();
+          }
+
+      },
+
+      answeredincorrectly: function() {
 
          game.incorrect++;
 
          clearInterval(timer);
 
          panel.html("<h2>Nope!</h2>");
-         panel.append("<h3>The Correct Answer was: " + questions[game.currentQuestion].correctAnswer)
-       }
+         panel.append("<h3>The Correct Answer was: "+ questions[game.currentQuestion].correctAnswer + "</h3>");
+         panel.append("<img src= '" + questions[game.currentQuestion].image + "'/>");
 
-   }
+         if (game.currentQuestion === questions.length - 1)
+         {
+            setTimeout(game.results, 3 * 1000);
+         }
+         else
+         {
+            setTimeout(game.nextQuestion, 3 * 1000);
+         }
 
-}
+      },
+
+      answeredCorrectly: function() {
+         game.correct++;
+
+         clearInterval(timer);
+
+         panel.html("<h2>Correct!</h2>");
+         panel.append("<img src='" + questions[game.currentQuestion].image + "'/>");
+
+         if (game.currentQuestion === questions.length - 1 )
+         {
+            setTimeout(game.results, 3 * 1000);
+         }
+         else
+         {
+            setTimeout(game.nextQuestion, 3 * 1000);
+         }
+      },
+
+      reset: function() {
+
+         this.currentQuestion = 0;
+         this.counter = countStartNumber;
+         this.correct = 0;
+         this.incorrect = 0;
+         this.loadQuestion();
+      }
+};
 
