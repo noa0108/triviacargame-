@@ -31,7 +31,14 @@ var questions = [
         Answer: ["Arandale","Hallandale","Arrendelle","Aroundelle"],
         correctAnswer: "Arrendelle",
         image: "https://www.mimorelia.com/wp-content/uploads/2018/03/noticias/04/giphy-2.gif"
-    }
+    },
+
+    {
+        question: "What was the name of Harry Potter's pet owl?",
+        Answer: ["Peeves","Errol","Scabbers","Hedwig"],
+        correctAnswer: "Hedwig",
+        image: "https://www.welovebuzz.com/wp-content/uploads/2017/12/harry.gif"
+    },
 
 
 
