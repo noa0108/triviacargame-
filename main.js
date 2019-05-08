@@ -9,15 +9,30 @@ var questions = [
         question: "In which year were the Academy Awards first presented?",
         answers: ["1929", "1914", "1930", "1917"],
         correctAnswer: "1929",
-        image: "assets\Toy Story p7.gif"
+        image: "https://usatftw.files.wordpress.com/2013/12/mccarron600px1.gif?w=1000"
     },
 
     {
-        question: "what is the national dish of Italy",
-        answers: ["hamburgers", "bolognese", "crispy chicken wing", "pizza"],
-        correctAnswer: "bolognese",
-        image: "assets\spice girls p7.gif"
+        question: "What year was Forrest Gump released?",
+        answers: ["1998", "1994", "1930", "1995"],
+        correctAnswer: "1994",
+        image: "https://i.skyrock.net/2998/4082998/pics/3298656872_1_5_tvRnKBgS.gif"
+    },
+
+    {
+        question: "In the Walt Disney film Pinocchio, what is the name of the giant whale?",
+        answers: ["Monsro","Monstroute","Monmon","Tom"],
+        correctAnswer: "Monsro",
+        image: "https://img.static-rmg.be/a/view/q75/w720/h480/2086514/giphy-1-gif.gif"
+    },
+
+    {
+        question: "What is the name of the kingdom where the 2013 animated movie Frozen is set?",
+        Answer: ["Arandale","Hallandale","Arrendelle","Aroundelle"],
+        correctAnswer: "Arrendelle",
+        image: "https://www.mimorelia.com/wp-content/uploads/2018/03/noticias/04/giphy-2.gif"
     }
+
 
 
 ]
